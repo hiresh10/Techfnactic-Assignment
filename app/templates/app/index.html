@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techfnatic</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="{% static 'image/logo1.png ' %}"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'adminloginpage' %}">Admin LogIn</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contactpage' %}">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Bring Your Ideas to Life With Techfnatic</h1>
+        <p>The one stop store for all your Technical Requirements. Help us transform your buisness with all heavy lifting you need.</p>
+        <a href="{% url 'signuppage' %}" class="btn btn-primary">Our Products</a>
+      </div>
+      <div class="col-md-6">
+        <img src="{% static 'image/banner-img.svg' %}" alt="Techfnatic" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="footer">
+  
+    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'image/logo1.png ' %}"></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="social-media">
+          <li><a href="{% url 'index' %}"><i class="fab fa-facebook-f">Home</i></a></li>
+          <li><a href="{% url 'signuppage' %}"><i class="fab fa-twitter"></i>Products</a></li>
+          <li><a href="{% url 'contactpage' %}"><i class="fab fa-instagram">Contact Us</i></a></li>
+        </ul>
+        <a href="https://www.facebook.com/Techfnatic"><i class="col-md-12"><img src="{% static 'image/facebook.png' %}"></i></a>
+        <a href="https://www.linkedin.com/company/techfnatic/"><i class="col-md-12"><img src="{% static 'image/linkdin.png' %}"></i></a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

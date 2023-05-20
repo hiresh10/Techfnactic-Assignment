@@ -1,0 +1,67 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<!-- Services Section -->
+    <center>
+      <h1>-Our Products-</h1>
+    </center>
+<section class="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="service-item">
+        <center>
+          <img src="{% static 'image/easy-ecom.png' %}" alt="Service 1">
+            <a href="#"><i><h3>easy-eCom</h3></i></a>
+            <p>An easy, DIY e-commerce web application</p>
+          </center>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="service-item">
+            <center>
+                <img src="{% static 'image/estimateasy-11.png' %}" alt="Service 2">
+                <a href="#"><i><h3>EstimatEasY-</h3></i></a>
+                <p>An AI driven Deep Learnig SAAS technology,</p>
+            </center>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="service-item">
+            <center>
+                <img src="{% static 'image/img-1.png' %}" alt="Service 3">
+                <a href="#"><i><h3>WebsitEasY-</h3></i></a>
+                <p>A DIY website bouilder & Deployer</p>
+            </center>
+        </div>
+        {% if all_cards %}
+        {% for i in all_cards %}
+        <div class="service-item">
+          <center>
+              <img src="{{MEDIA_URL}}{{i.product_card.url}}" alt="Service 3">
+              <a href="#"><i><h3>{{i.link}}</h3></i></a>
+              <p>{{i.text}}</p>
+          </center>
+          <center>
+            <div class="col-md-2">
+              <a href="{% url 'updatepage' %}" class="btn btn-primary w-100">Update Product Card</a>
+            </div>
+          </center>
+      </div>
+      {% endfor %}
+      {% endif %}
+        <center>
+          <div class="col-md-3">
+            <a href="{% url 'productpage' %}" class="btn btn-primary w-100">Add Product</a>
+          </div>
+        </center>
+    </div>
+</div>
+
+  </div>
+</section>
+{% endblock  %}

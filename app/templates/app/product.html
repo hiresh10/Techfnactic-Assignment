@@ -1,0 +1,80 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="vh-100" style="background: url('https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/') center center;">
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="login_page bg-white shadow rounded p-4">
+                            <div class="text-center">
+                                <h4 class="mb-4">Add Product</h4> 
+                                {% if msg %}
+                                <h3 style="color: red;">{{msg}}</h3> 
+                                {% endif %}
+                            </div>
+                            <form class="login-form" method="post" enctype="multipart/form-data" action="{% url 'add' pk=request.session.id %}">
+                                {% csrf_token %}
+
+                                
+                                
+                                    
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">                                                
+                                            <label>Image <span class="text-danger">*</span></label>
+                                            <input type="file" class="form-control" placeholder="Upload Image" name="image" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Text <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" placeholder="Add Info" name="text" required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Link <span class="text-danger">*</span></label>
+                                            <input type="link" class="form-control" name="link" placeholder="Add link" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Address <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="address" placeholder="Add Adress" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Contact <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="phone" placeholder="Contact Number" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Product Card <span class="text-danger">*</span></label>
+                                            <input type="file" class="form-control" name="product" placeholder="Add Product Card" required="">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary w-100">Add Product</button>
+                                    </div>
+                                   
+                                
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!--end col-->
+                </div><!--end row-->
+            </div> <!--end container-->
+        </div>
+    </div>
+</section>
+
+{% endblock %}

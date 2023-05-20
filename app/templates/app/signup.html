@@ -1,0 +1,73 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="vh-100" style="background: url('https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/') center center;">
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="login_page bg-white shadow rounded p-4">
+                            <div class="text-center">
+                                <h4 class="mb-4">Signup</h4> 
+                                {% if msg %}
+                                <h3 style="color: red;">{{msg}}</h3> 
+                                {% endif %}
+                            </div>
+                            <form class="login-form" method="post" action="{% url 'register' %}">
+                                {% csrf_token %}
+
+                                
+                                
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">                                               
+                                            <label>First name <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" placeholder="First Name" name="fname" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">                                                
+                                            <label>Last name <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Last Name" name="lname" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Your Email <span class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" placeholder="Email" name="email" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Password <span class="text-danger">*</span></label>
+                                            <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative">
+                                            <label>Confirm Password <span class="text-danger">*</span></label>
+                                            <input type="password" class="form-control" name="cpassword" placeholder="Confirm Password" required="">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary w-100">Register</button>
+                                    </div>
+                                   
+                                    <div class="mx-auto">
+                                        <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a href="{% url 'loginpage' %}" class="text-dark font-weight-bold">Sign in</a></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!--end col-->
+                </div><!--end row-->
+            </div> <!--end container-->
+        </div>
+    </div>
+</section>
+
+{% endblock %}

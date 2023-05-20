@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+{% if all_cards %}
+{% for i in all_cards %}
+<div class="service-item">
+  <center>
+      <img src="{{MEDIA_URL}}{{i.product_card.url}}" alt="Service 3">
+      <a href="#"><i><h3>{{i.link}}</h3></i></a>
+      <p>{{i.text}}</p>
+  </center>
+  <center>
+    <div class="col-md-2">
+      <a href="{% url 'delete_product' %}" class="btn btn-primary w-100">Delete Product Card</a>
+    </div>
+  </center>
+</div>
+{% endfor %}
+{% endif %}
+
+</div>
+</div>
+
+</div>
+</section>
+{% endblock  %}
